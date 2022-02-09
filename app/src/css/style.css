@@ -1,0 +1,132 @@
+/* Main Wrapper */
+.main-wrapper{
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+/* Header */
+
+.header{
+    height: 60px;    
+    background-color: #282828;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.header .sidebar-toggler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header .sidebar-toggler,
+.header .sidebar-toggler .icon{
+    width: 24px;
+    height: 24px;
+}
+
+.header .sidebar-toggler .icon{
+    position: absolute;
+    transition: 0.3s;
+}
+
+.header .sidebar-toggler .icon.open{
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+.header .sidebar-toggler .icon.close{
+    transform: rotate(-180deg);
+    opacity: 0;
+}
+
+.header .sidebar-toggler.active .icon.open{
+    transform: rotate(180deg);
+    opacity: 0;
+}
+
+.header .sidebar-toggler.active .icon.close{
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+@media (min-width: 992px){
+
+    .header .sidebar-toggler{
+        display: none;
+    }
+
+}
+
+/* Sidebar */
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #353535;
+    color: #fff;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.sidebar.active{
+    left: 0;
+}
+
+.sidebar .link{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar .link:not(:last-of-type){
+    margin-bottom: 16px;
+}
+
+.sidebar .link .icon-wrapper{
+    width: 24px;
+    margin-right: 8px;
+}
+
+@media(min-width: 992px){
+
+    .sidebar{
+        position: relative;
+        height: calc(100vh - 60px);
+        padding: 16px 32px;
+        left: 0;
+    }
+
+}
+
+/* Main Content */
+
+.content{
+    width: 100%;
+    padding: 8px 16px;
+    overflow-y: auto;
+    background: #e0edf3;
+    height: calc(100vh - 60px);
+}
+
+@media(min-width: 992px){
+
+    .content{
+        width: calc(100% - 280px);
+        padding: 16px 32px;
+    }
+
+}

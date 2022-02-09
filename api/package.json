@@ -1,0 +1,29 @@
+{
+    "name": "desafio-react-pleno",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jpbarth/desafio-react-pleno.git"
+    },
+    "author": "JPBarth <joaopedrobarth@gmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jpbarth/desafio-react-pleno/issues"
+    },
+    "homepage": "https://github.com/jpbarth/desafio-react-pleno#readme",
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    },
+    "dependencies": {
+        "consign": "^0.1.6",
+        "cors": "^2.8.5",
+        "express": "^4.17.2",
+        "pg": "^8.7.1",
+        "postgres": "^1.0.2"
+    }
+}

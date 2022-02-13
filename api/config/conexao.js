@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 
 const conexao = new Client({
-    host: 'localhost',
+    host: 'server-software-db',
     user: 'postgres',
     database: 'postgres',
     password: 'root',

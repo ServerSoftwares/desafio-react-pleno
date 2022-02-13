@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:14.2
+    container_name: server-software-db
+    networks:
+      - server-software-bridge
+    environment:
+      POSTGRES_DATABASE: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    volumes: 
+      - server-software-db-volume:/var/pgdate
+      - ./database/create.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 4321:5432
+
+  api:
+    build:
+      context: ./api
+    container_name: server-software-api
+    networks:
+      - server-software-bridge
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - server-software-api-volume:/api
+
+  app:
+    build:
+      context: ./app
+    container_name: server-software-app
+    networks:
+      - server-software-bridge
+    ports:
+      - 3001:3000
+    depends_on:
+      - db
+      - api
+    volumes:
+      - server-software-app-volume:/app
+
+networks:
+  server-software-bridge:
+    driver: bridge
+
+volumes:
+  server-software-db-volume:
+  server-software-api-volume:
+  server-software-app-volume:

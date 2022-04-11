@@ -1,10 +1,9 @@
 # Desafio React Pleno
 
 ## Passos para realizar o desafio
- - Você deve realizar o fork deste projeto
- - Faça o checkout do fork e desenvolva a sua aplicação localmente
- - Desenvolver as aplicações conforme descrito abaixo
- - Após finalizado o desenvolvimento realizar um Pull Request para realizarmos um Code Review e podermos avaliar o seu conhecimento
+- Você deve criar um repositório com para esse desafio. 
+- Desenvolver as aplicações conforme descrito abaixo.
+- Após finalizar, faça o push para seu repositório, revise seu código e envie por e-mail o endereço do repositório para que possamos analisar o código.
 
 ## Descritivo do desafio
 
